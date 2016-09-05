@@ -14,11 +14,26 @@ class Individual():
         """
         return self.preference_list.index(other)
 
+    def get_id_list(self, instance_list):
+        """Get a list of ID numbers corresponding to the input
+        list of instances.
+
+        Args:
+            intance_list: A list of other Individual objects.
+
+        Returns:
+            A list of ID numbers.
+        """
+        id_list = []
+        for i in instance_list:
+            id_list.append(i.id_number if i else None)
+        return id_list
+
     def __str__(self):
-        preference_list_numbers = []
-        for other in self.preference_list:
-            preference_list_numbers.append(other.id_number)
-        output = 'id_number={0} preference_list={1} partner={2}'.format(
-                    self.id_number, preference_list_numbers,
-                    self.partner.id_number if self.partner else None)
+        output = ('id_number={0} preference_list={1} available_proposals={2} '
+                  'partner={3}'.format(
+                     self.id_number,
+                     self.get_id_list(self.preference_list),
+                     self.get_id_list(self.available_proposals),
+                     self.partner.id_number if self.partner else None))
         return output
