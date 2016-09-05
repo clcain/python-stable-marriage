@@ -11,6 +11,10 @@ class Individual():
 
         Args:
             other: The other person in the prospective match.
+
+        Returns:
+            An index indicating the priority of a match.
+            Lower numbers indicate higher priorities.
         """
         return self.preference_list.index(other)
 
