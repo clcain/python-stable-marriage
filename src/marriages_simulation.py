@@ -71,7 +71,7 @@ class MarriagesSimulation():
     def is_stable(self):
         """Check if this simulation has reached a stable state.
 
-        The simulation is considered stable if both members of couple would
+        The simulation is considered stable if both members of a couple would
         not be happier with an alternative match.
 
         Returns:
