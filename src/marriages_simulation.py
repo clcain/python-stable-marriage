@@ -123,7 +123,7 @@ class MarriagesSimulation():
                             self.pair_couple(man, woman)
                             man.available_proposals.remove(woman)
                             break
-                        elif woman.partner and woman.get_priority(man) > woman.get_priority(woman.partner):
+                        elif woman.partner and woman.get_priority(man) < woman.get_priority(woman.partner):
                             self.free_couple(woman.partner, woman)
                             self.pair_couple(man, woman)
                             break
