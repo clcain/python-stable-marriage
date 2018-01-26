@@ -19,4 +19,4 @@ def main():
     size = int(sys.argv[1])
     start_simulation(size)
 
-if __name__: main()
+if __name__ == '__main__': main()
